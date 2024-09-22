@@ -1,12 +1,20 @@
+import Header from '@components/header';
 import { Global } from '@emotion/react';
-import globalStyles from '@styles/global';
+import { ThemeProvider } from '@kami-ui/next-theme';
+// eslint-disable-next-line import/no-extraneous-dependencies, node/no-extraneous-import
+import { globalStyles } from '@styles/global';
+import theme from '@styles/theme';
+import { ReactLenis } from 'lenis/react';
 import type { AppProps } from 'next/app';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return (
-    <>
+const App = ({ Component, pageProps }: AppProps) => (
+  <ThemeProvider theme={theme}>
+    <ReactLenis root options={{ duration: 1 }}>
       <Global styles={globalStyles} />
+      <Header />
       <Component {...pageProps} />
-    </>
-  );
-}
+    </ReactLenis>
+  </ThemeProvider>
+);
+
+export default App;
