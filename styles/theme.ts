@@ -3,7 +3,7 @@ import { defaultLightTheme } from '@kami-ui/theme-shop';
 import { ThemeObject } from '@kami-ui/types';
 import { breakpoints } from '@styles/global';
 // eslint-disable-next-line camelcase
-import { DM_Mono, DM_Sans, DM_Serif_Display } from 'next/font/google';
+import { DM_Mono, DM_Serif_Display, Poppins } from 'next/font/google';
 
 const fontSansSerif = DM_Serif_Display({
   weight: ['400'],
@@ -15,7 +15,7 @@ const fontMono = DM_Mono({
   subsets: ['latin', 'latin-ext'],
 });
 
-const fontSans = DM_Sans({
+const fontSans = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
   subsets: ['latin', 'latin-ext'],
 });

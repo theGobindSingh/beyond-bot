@@ -1,7 +1,5 @@
 import { css } from '@emotion/react';
 
-export const headerHeight = 80;
-
 export const breakpoints = {
   phone: {
     min: 0,
@@ -20,7 +18,7 @@ export const mediaQuery = {
 
 export const globalStyles = css`
   :root {
-    --header-height: ${headerHeight}px;
+    --header-height: 70px;
   }
   body {
     color: var(--color-text-900);
@@ -30,4 +28,32 @@ export const globalStyles = css`
     margin: 0;
     box-sizing: border-box;
   }
+  .link-animation {
+    position: relative;
+    &:hover {
+      &::before {
+        transform: scaleX(1);
+      }
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 0.125em;
+      color: inherit;
+      background-color: currentColor;
+      bottom: 0;
+      left: 0;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: all 0.3s ease;
+      opacity: 0.75;
+    }
+  }
+`;
+
+export const commonLinkStyles = css`
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
 `;
