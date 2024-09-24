@@ -7,7 +7,7 @@ export const homeDotBgWrapperStyles = css`
 
 export const homeWrapperStyles = css`
   display: flex;
-  height: 100vh;
+  height: 100svh;
   justify-content: center;
   align-items: center;
   & > * {
