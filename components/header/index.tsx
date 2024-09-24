@@ -14,6 +14,7 @@ const Header = () => (
   <CommonFullWidthWrapper
     wrapperCss={headerWrapperStyles}
     css={headerContainerStyles}
+    element="header"
   >
     <Image src={logoImage} alt="logo" css={headerImageStyles} />
     <Link href="/" css={headerLogoTextStyles}>

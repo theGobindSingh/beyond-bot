@@ -21,11 +21,13 @@ export const globalStyles = css`
     --header-height: 70px;
   }
   body {
-    color: var(--color-text-900);
+    color: var(--color-gray-800);
     font-size: var(--fs-2xs);
     font-family: var(--font-sans);
     padding: 0;
     margin: 0;
+  }
+  * {
     box-sizing: border-box;
   }
   .link-animation {
@@ -50,10 +52,21 @@ export const globalStyles = css`
       opacity: 0.75;
     }
   }
+  /* ${mediaQuery.phone} {
+    :root {
+      --header-height: 40px;
+    }
+  } */
 `;
 
 export const commonLinkStyles = css`
   text-decoration: none;
   color: inherit;
   font-size: inherit;
+  font-size: var(--fs-2xs);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  ${mediaQuery.phone} {
+    font-size: var(--fs-3xs);
+  }
 `;
