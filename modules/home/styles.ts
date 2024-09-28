@@ -115,3 +115,54 @@ export const HomeServiceCard = styled.div`
     max-width: 80%;
   }
 `;
+
+export const homeServiceContainerStyles = css`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
+`;
+
+export const HomeServiceContent = styled.div`
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .vision-text {
+    line-height: 2rem;
+  }
+  @media (max-width: 900px) {
+    width: 100%;
+  }
+`;
+
+export const homeServiceLinkStyles = css`
+  ${homeHeroLinkStyles}
+  margin: 2rem 0;
+  &:hover {
+    box-shadow: 0 0 8px 0px var(--color-gray-600);
+  }
+`;
+
+export const homeServiceImgStyles = css`
+  width: 40%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  max-width: 480px;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  filter: saturate(0%);
+  transition: all 0.3s ease-in-out;
+  &.active {
+    filter: saturate(100%);
+  }
+  &:hover,
+  &.forced-active {
+    filter: saturate(0%);
+  }
+  @media (max-width: 900px) {
+    width: 100%;
+  }
+`;

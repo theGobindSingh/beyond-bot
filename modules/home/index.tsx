@@ -7,6 +7,7 @@ import {
   homeDotBgWrapperStyles,
   homeWrapperStyles,
 } from '@modules/home/styles';
+import HomeVision from '@modules/home/vision';
 import Head from 'next/head';
 
 const Home = () => (
@@ -18,6 +19,7 @@ const Home = () => (
     <HeaderFiller />
     <HomeHero />
     <HomeServices />
+    <HomeVision />
   </DotBg>
 );
 

@@ -47,7 +47,7 @@ export const homeHero = {
 
 export const homeServices = {
   title: 'Our Services',
-  changedFont: [2, 9],
+  changedFont: [1, 7],
   services: [
     {
       title: 'E-Commerce',
@@ -73,4 +73,23 @@ export const homeServices = {
       consultations and follow-up scheduling, making healthcare more accessible and convenient.`,
     },
   ],
+};
+
+export const homeVision = {
+  title: 'Vision & Commitment',
+  changedFont: [2, 17],
+  link: {
+    url: '/partner',
+    text: 'Partner with us',
+  },
+  text: `At our core, we envision a future where website interactions are driven by advanced AI, creating online 
+  experiences that are as intuitive and engaging as offline ones. We are pioneering the future of web interactions 
+  with our cutting-edge AI-powered agents, providing seamless and intuitive online experiences that rival the best 
+  offline interactions. Our commitment is to help industries, businesses, and sectors derive maximum benefit from 
+  generative AI advancements, making this technology accessible and easy to integrate. By integrating advanced AI 
+  technology, we help businesses across various sectors maximize their engagement and efficiency, providing tailored 
+  solutions that enhance user satisfaction and drive growth. Join us in transforming digital experiences and unlocking 
+  the full potential of AI for your business.`,
+  imgUrl:
+    'https://img.freepik.com/free-photo/two-crop-hands-handshake_23-2147711143.jpg',
 };
