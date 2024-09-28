@@ -26,7 +26,7 @@ export const ContactSectionContainer = styled.div`
   align-items: center;
   gap: 1rem;
   border-radius: 0px;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease 50ms;
   * {
     text-align: center;
   }
