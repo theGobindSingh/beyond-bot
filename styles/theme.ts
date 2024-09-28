@@ -1,12 +1,18 @@
+/* eslint-disable camelcase */
+
 import { defaultLightTheme } from '@kami-ui/theme-shop';
 // eslint-disable-next-line import/no-extraneous-dependencies, node/no-extraneous-import
 import { ThemeObject } from '@kami-ui/types';
 import { breakpoints } from '@styles/global';
-// eslint-disable-next-line camelcase
-import { DM_Mono, DM_Serif_Display, Poppins } from 'next/font/google';
+import {
+  DM_Mono,
+  Inter,
+  Nothing_You_Could_Do,
+  Poppins,
+} from 'next/font/google';
 
-const fontSansSerif = DM_Serif_Display({
-  weight: ['400'],
+const fontSansSerif = Inter({
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
   subsets: ['latin', 'latin-ext'],
 });
 
@@ -18,6 +24,11 @@ const fontMono = DM_Mono({
 const fontSans = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
   subsets: ['latin', 'latin-ext'],
+});
+
+const fontCursive = Nothing_You_Could_Do({
+  weight: ['400'],
+  subsets: ['latin'],
 });
 
 const theme: ThemeObject = {
@@ -38,9 +49,9 @@ const theme: ThemeObject = {
           '1.5rem', // 24px
           '1.875rem', // 30px
           '2.25rem', // 36px
-          '3rem', // 48px
-          '4rem', // 64px
-          '5rem', // 80px
+          '2.75rem', // 44px
+          '3.25rem', // 52px
+          '3.75rem', // 60px
         ],
       },
       {
@@ -58,8 +69,8 @@ const theme: ThemeObject = {
           '1.5rem', // 24px
           '1.875rem', // 30px
           '2.25rem', // 36px
-          '3rem', // 48px
-          '4rem', // 64px
+          '2.75rem', // 44px
+          '3.25rem', // 52px
         ],
       },
     ],
@@ -67,6 +78,7 @@ const theme: ThemeObject = {
       serif: fontSansSerif.style.fontFamily,
       sans: fontSans.style.fontFamily,
       mono: fontMono.style.fontFamily,
+      cursive: fontCursive.style.fontFamily,
     },
   },
 };

@@ -2,39 +2,37 @@ import CommonFullWidthWrapper from '@components/common-full-width-wrapper';
 import {
   headerContainerStyles,
   headerImageStyles,
-  headerLogoTextStyles,
   HeaderNavWrapper,
   headerWrapperStyles,
 } from '@components/header/styles';
-import logoImage from '@images/logo.png';
+import { headerLinks, logo, name } from '@data';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-const Header = () => (
-  <CommonFullWidthWrapper
-    wrapperCss={headerWrapperStyles}
-    css={headerContainerStyles}
-    element="header"
-  >
-    <Image src={logoImage} alt="logo" css={headerImageStyles} />
-    <Link href="/" css={headerLogoTextStyles}>
-      Beyond Bot
+const Header = () => {
+  const { pathname } = useRouter();
+
+  const linksMapper = ({ title, url }: (typeof headerLinks)[0]) => (
+    <Link
+      href={url}
+      className={pathname === url ? 'active link-animation' : 'link-animation'}
+      key={url}
+    >
+      {title}
     </Link>
-    <HeaderNavWrapper>
-      <Link href="/" className="link-animation">
-        Home
-      </Link>
-      <Link href="/services" className="link-animation">
-        Services
-      </Link>
-      <Link href="/partners" className="link-animation">
-        Partners
-      </Link>
-      <Link href="/contact" className="link-animation">
-        Contact
-      </Link>
-    </HeaderNavWrapper>
-  </CommonFullWidthWrapper>
-);
+  );
+
+  return (
+    <CommonFullWidthWrapper
+      wrapperCss={headerWrapperStyles}
+      css={headerContainerStyles}
+      element="header"
+    >
+      <Image src={logo.black} alt={name} css={headerImageStyles} height={42} />
+      <HeaderNavWrapper>{headerLinks.map(linksMapper)}</HeaderNavWrapper>
+    </CommonFullWidthWrapper>
+  );
+};
 
 export default Header;

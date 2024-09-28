@@ -1,3 +1,4 @@
+import Footer from '@components/footer';
 import Header from '@components/header';
 import { Global } from '@emotion/react';
 import { ThemeProvider } from '@kami-ui/next-theme';
@@ -13,6 +14,7 @@ const App = ({ Component, pageProps }: AppProps) => (
       <Global styles={globalStyles} />
       <Header />
       <Component {...pageProps} />
+      <Footer />
     </ReactLenis>
   </ThemeProvider>
 );

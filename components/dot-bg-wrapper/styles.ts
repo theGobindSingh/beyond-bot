@@ -13,8 +13,21 @@ export const DotBgWrapper = styled.div`
   width: 150%;
   top: -25%;
   left: -25%;
-  background-image: radial-gradient(var(--color-gray-400) 1.3px, transparent 0);
-  background-size: 30px 30px;
+
+  --_s: 1px;
+  --_bs: 30px;
+
+  background-image: linear-gradient(
+      0deg,
+      var(--color-gray-400) var(--_s),
+      transparent var(--_s)
+    ),
+    linear-gradient(
+      90deg,
+      var(--color-gray-300) var(--_s),
+      transparent var(--_s)
+    );
+  background-size: var(--_bs) var(--_bs);
   transition: all 0s ease;
 `;
 

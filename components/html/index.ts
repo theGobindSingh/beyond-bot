@@ -29,7 +29,7 @@ const fontSizes = {
   '4xl': 'var(--fs-4xl)',
 };
 
-interface CommonTextProps {
+export interface CommonTextProps {
   $size?: keyof typeof fontSizes;
   $margin?: string;
   $weight?: Weight;
@@ -51,23 +51,23 @@ const getColor = ({
 };
 
 export const H1 = styled.h1<CommonTextProps>`
-  font-size: ${({ $size }) => fontSizes[$size || 'l']};
+  font-size: ${({ $size }) => fontSizes[$size || '4xl']};
   margin: ${({ $margin }) => $margin || '0 0 0.75em 0'};
-  font-weight: ${({ $weight }) => $weight || '500'};
+  font-weight: ${({ $weight }) => $weight || '600'};
   line-height: ${({ $lineHeight }) => $lineHeight || 'normal'};
   color: ${getColor};
 `;
 
 export const H2 = styled.h2<CommonTextProps>`
-  font-size: ${({ $size }) => fontSizes[$size || 'm']};
+  font-size: ${({ $size }) => fontSizes[$size || '2xl']};
   margin: ${({ $margin }) => $margin || '0 0 0.5em 0'};
-  font-weight: ${({ $weight }) => $weight || '500'};
+  font-weight: ${({ $weight }) => $weight || '600'};
   line-height: ${({ $lineHeight }) => $lineHeight || 'normal'};
   color: ${getColor};
 `;
 
 export const H3 = styled.h3<CommonTextProps>`
-  font-size: ${({ $size }) => fontSizes[$size || 's']};
+  font-size: ${({ $size }) => fontSizes[$size || 'm']};
   margin: ${({ $margin }) => $margin || '0 0 0.25em 0'};
   font-weight: ${({ $weight }) => $weight || '500'};
   line-height: ${({ $lineHeight }) => $lineHeight || 'normal'};
@@ -75,7 +75,7 @@ export const H3 = styled.h3<CommonTextProps>`
 `;
 
 export const P = styled.p<CommonTextProps>`
-  font-size: ${({ $size }) => fontSizes[$size || '1xs']};
+  font-size: ${({ $size }) => fontSizes[$size || '2xs']};
   margin: ${({ $margin }) => $margin || '0'};
   font-weight: ${({ $weight }) => $weight || '400'};
   line-height: ${({ $lineHeight }) => $lineHeight || 'normal'};

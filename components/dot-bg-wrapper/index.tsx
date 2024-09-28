@@ -47,6 +47,7 @@ const DotBg = ({
       secondContainer={<DotBgWrapper ref={dotElemRef} />}
       wrapperCss={[wrapperStyles, wrapperCss] as unknown as SerializedStyles}
       css={childrenWrapperStyles}
+      element="div"
       {...props}
     >
       {children}

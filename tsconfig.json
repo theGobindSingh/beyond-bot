@@ -9,6 +9,7 @@
     "forceConsistentCasingInFileNames": true,
     "jsxImportSource": "@emotion/react",
     "paths": {
+      "@data": ["./data"],
       "@assets/*": ["./public/assets/*"],
       "@images/*": ["./public/assets/images/*"],
       "@public/*": ["./public/*"],

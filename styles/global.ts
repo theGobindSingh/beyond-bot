@@ -19,6 +19,7 @@ export const mediaQuery = {
 export const globalStyles = css`
   :root {
     --header-height: 70px;
+    --color-bg-primary-hsl: 240, 60%, 80%;
   }
   body {
     color: var(--color-gray-800);
@@ -52,11 +53,9 @@ export const globalStyles = css`
       opacity: 0.75;
     }
   }
-  /* ${mediaQuery.phone} {
-    :root {
-      --header-height: 40px;
-    }
-  } */
+  .cursive {
+    font-family: var(--font-cursive);
+  }
 `;
 
 export const commonLinkStyles = css`
@@ -69,4 +68,15 @@ export const commonLinkStyles = css`
   ${mediaQuery.phone} {
     font-size: var(--fs-3xs);
   }
+`;
+
+export const commonWrapperStyles = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 1rem;
+  padding: 3rem 0;
+  width: 100%;
 `;
