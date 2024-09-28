@@ -1,3 +1,4 @@
+import ContactSection from '@components/contact-section';
 import DotBg from '@components/dot-bg-wrapper';
 import HeaderFiller from '@components/header-filler';
 import { description, name } from '@data';
@@ -20,6 +21,7 @@ const Home = () => (
     <HomeHero />
     <HomeServices />
     <HomeVision />
+    <ContactSection />
   </DotBg>
 );
 

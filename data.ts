@@ -93,3 +93,12 @@ export const homeVision = {
   imgUrl:
     'https://img.freepik.com/free-photo/two-crop-hands-handshake_23-2147711143.jpg',
 };
+
+export const contactSection = {
+  title: 'Get in touch',
+  text: `Have questions? Reach out today and let's elevate your customer's experience together! We're here to help!`,
+  link: {
+    url: '/contact',
+    text: 'Contact us',
+  },
+};

@@ -158,9 +158,11 @@ export const homeServiceImgStyles = css`
   &.active {
     filter: saturate(100%);
   }
-  &:hover,
-  &.forced-active {
-    filter: saturate(0%);
+  @media (min-width: 900px) {
+    &:hover,
+    &.forced-active {
+      filter: saturate(0%);
+    }
   }
   @media (max-width: 900px) {
     width: 100%;
