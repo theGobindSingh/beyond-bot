@@ -13,7 +13,7 @@ type ColorType =
   | 'gray'
   | 'black'
   | 'white';
-type Weight = `${1 | 2 | 3 | 4 | 5 | 6}00`;
+type Weight = `${1 | 2 | 3 | 4 | 5 | 6 | 7 | 8}00`;
 
 const fontSizes = {
   '4xs': 'var(--fs-4xs)',
@@ -36,7 +36,6 @@ export interface CommonTextProps {
   $lineHeight?: string;
   $color?: ColorType;
   $colorWeight?: Weight;
-  abc?: string;
 }
 
 const getColor = ({
