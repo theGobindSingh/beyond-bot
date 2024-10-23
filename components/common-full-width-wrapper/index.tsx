@@ -1,26 +1,45 @@
-import { css } from '@emotion/react';
+import {
+  containerSize,
+  containerStyles,
+  wrapperStyles,
+} from '@components/common-full-width-wrapper/styles';
 import {
   FullWidthWrapper,
   FullWidthWrapperProps,
 } from '@kami-ui/react-components';
-import { forwardRef, Ref } from 'react';
+import { forwardRef, PropsWithChildren, Ref } from 'react';
 
-const containerStyles = css`
-  @media (max-width: 640px) {
-    width: 90%;
-  }
-`;
+interface CommonFullWidthWrapperProps {
+  className?: string;
+  element?: FullWidthWrapperProps['element'];
+  wrapperCss?: FullWidthWrapperProps['wrapperCss'];
+  bg?: string;
+  notFps?: boolean;
+}
 
 const CommonFullWidthWrapperWithoutRef = (
-  props: FullWidthWrapperProps,
+  {
+    className,
+    children,
+    element = 'section',
+    wrapperCss,
+    bg,
+    notFps = false,
+  }: PropsWithChildren<CommonFullWidthWrapperProps>,
   ref: Ref<HTMLElement>,
-) => {
-  const newProps: FullWidthWrapperProps = {
-    containerSize: '85%',
-    ...props,
-  };
-  return <FullWidthWrapper css={containerStyles} {...newProps} ref={ref} />;
-};
+) => (
+  <FullWidthWrapper
+    wrapperClassName={notFps ? (undefined as unknown as string) : 'fps'}
+    className={className}
+    css={containerStyles}
+    wrapperCss={[wrapperStyles(bg), wrapperCss] as any}
+    containerSize={containerSize}
+    element={element}
+    ref={ref}
+  >
+    {children}
+  </FullWidthWrapper>
+);
 
 const CommonFullWidthWrapper = forwardRef(CommonFullWidthWrapperWithoutRef);
 export default CommonFullWidthWrapper;

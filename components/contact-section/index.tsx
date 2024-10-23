@@ -1,11 +1,16 @@
 import {
   ContactSectionContainer,
-  ContactSectionGradient,
   contactSectionLinkStyles,
-  ContactSectionWrapper,
+  contactSectionMainContainerStyles,
+  contactSectionWrapperStyles,
+  imgStyles,
 } from '@components/contact-section/styles';
+import DotBgSection from '@components/dot-bg-section';
+import Footer from '@components/footer';
 import { H2, P } from '@components/html';
 import { contactSection } from '@data';
+import xMesh from '@images/xmesh.png';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRef } from 'react';
 
@@ -31,7 +36,11 @@ const ContactSection = () => {
     containerElem.classList.remove('active');
   };
   return (
-    <ContactSectionWrapper>
+    <DotBgSection
+      css={contactSectionMainContainerStyles}
+      wrapperCss={contactSectionWrapperStyles}
+      secondContainer={<Footer />}
+    >
       <ContactSectionContainer ref={containerRef}>
         <H2 className="contact-title" $margin="0">
           {contactSection.title}
@@ -47,8 +56,23 @@ const ContactSection = () => {
           {contactSection.link.text}
         </Link>
       </ContactSectionContainer>
-      <ContactSectionGradient ref={gradientRef} />
-    </ContactSectionWrapper>
+      <Image
+        src={xMesh}
+        alt=""
+        className="_1"
+        css={imgStyles}
+        width={270}
+        height={270}
+      />
+      <Image
+        src={xMesh}
+        alt=""
+        className="_2"
+        css={imgStyles}
+        width={270}
+        height={270}
+      />
+    </DotBgSection>
   );
 };
 

@@ -1,4 +1,9 @@
+import {
+  containerSize,
+  mobileContainerSize,
+} from '@components/common-full-width-wrapper/styles';
 import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 
 export const breakpoints = {
   phone: {
@@ -27,6 +32,12 @@ export const globalStyles = css`
     font-family: var(--font-sans);
     padding: 0;
     margin: 0;
+  }
+  html {
+    overflow: unset !important;
+  }
+  #__next {
+    position: relative;
   }
   * {
     box-sizing: border-box;
@@ -75,8 +86,45 @@ export const commonWrapperStyles = css`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: sticky;
   gap: 1rem;
-  padding: 3rem 0;
+  padding: var(--header-height, 3rem) 0;
   width: 100%;
+  height: 100dvh;
+  top: 0;
+`;
+
+export const FpsWrapper = styled.div`
+  position: relative;
+  z-index: 1;
+  height: 100dvh;
+  width: 100%;
+  overflow-y: auto;
+  & > .fps {
+    position: sticky;
+    top: 0;
+  }
+
+  &.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  &.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  &.lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  &.lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+`;
+
+export const fullWidthPadding = css`
+  padding: 0 calc((100% - ${containerSize}) / 2);
+  ${mediaQuery.phone} {
+    padding: 0 calc((100% - ${mobileContainerSize}) / 2);
+  }
 `;

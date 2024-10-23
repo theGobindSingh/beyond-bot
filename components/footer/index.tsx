@@ -25,6 +25,7 @@ const copyrightMapper = (copyrightTextPart: string) => (
 const Footer = () => (
   <CommonFullWidthWrapper
     element="footer"
+    notFps
     css={footerContainerStyles}
     wrapperCss={footerWrapperStyles}
   >

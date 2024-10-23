@@ -1,6 +1,6 @@
+import CommonFullWidthWrapper from '@components/common-full-width-wrapper';
 import Heading from '@components/heading';
 import { P } from '@components/html';
-import InWrapperWithBg from '@components/in-wrapper-with-bg';
 import { homeVision, name } from '@data';
 import {
   homeServiceContainerStyles,
@@ -43,8 +43,8 @@ const HomeVision = () => {
     imgElem.classList.remove('forced-active');
   };
   return (
-    <InWrapperWithBg
-      bgColor="var(--color-gray-300)"
+    <CommonFullWidthWrapper
+      bg="var(--color-gray-300)"
       css={homeServiceContainerStyles}
     >
       <HomeServiceContent>
@@ -71,7 +71,7 @@ const HomeVision = () => {
         css={homeServiceImgStyles}
         ref={imgRef}
       />
-    </InWrapperWithBg>
+    </CommonFullWidthWrapper>
   );
 };
 

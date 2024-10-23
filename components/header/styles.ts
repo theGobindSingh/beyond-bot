@@ -10,6 +10,7 @@ export const headerWrapperStyles = css`
   }
   background-color: var(--color-neutral-200);
   box-shadow: 0 1rem 1.5rem -0.5rem var(--color-gray-300);
+  height: var(--header-height, fit-content);
 `;
 
 export const headerContainerStyles = css`

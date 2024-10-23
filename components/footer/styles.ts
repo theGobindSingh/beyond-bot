@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { commonLinkStyles } from '@styles/global';
 
 export const footerWrapperStyles = css`
-  background-color: var(--color-gray-300);
+  background-color: var(--color-gray-100);
 `;
 
 export const footerContainerStyles = css`

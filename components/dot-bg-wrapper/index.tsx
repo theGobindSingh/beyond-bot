@@ -1,18 +1,15 @@
-import CommonFullWidthWrapper from '@components/common-full-width-wrapper';
 import {
-  childrenWrapperStyles,
+  DotBgMainWrapper,
   DotBgWrapper,
-  wrapperStyles,
 } from '@components/dot-bg-wrapper/styles';
-import { SerializedStyles } from '@emotion/react';
-import { FullWidthWrapperProps } from '@kami-ui/react-components';
-import { useCallback, useEffect, useRef } from 'react';
+import { FpsWrapper } from '@styles/global';
+import { PropsWithChildren, useCallback, useEffect, useRef } from 'react';
 
 const DotBg = ({
   children,
-  wrapperCss,
-  ...props
-}: Omit<FullWidthWrapperProps, 'secondContainer'>) => {
+  withoutChildWrapper = false,
+}: PropsWithChildren<{ withoutChildWrapper?: boolean }>) => {
+  const childWrapperRef = useRef<HTMLDivElement>(null);
   const dotElemRef = useRef<HTMLDivElement>(null);
 
   const mouseMoveHandler = useCallback((e: MouseEvent) => {
@@ -43,15 +40,15 @@ const DotBg = ({
   }, [resizeHandler, mouseMoveHandler]);
 
   return (
-    <CommonFullWidthWrapper
-      secondContainer={<DotBgWrapper ref={dotElemRef} />}
-      wrapperCss={[wrapperStyles, wrapperCss] as unknown as SerializedStyles}
-      css={childrenWrapperStyles}
-      element="div"
-      {...props}
-    >
-      {children}
-    </CommonFullWidthWrapper>
+    <>
+      {!withoutChildWrapper && (
+        <FpsWrapper ref={childWrapperRef}>{children}</FpsWrapper>
+      )}
+      {withoutChildWrapper && children}
+      <DotBgMainWrapper className="dot-wrapper">
+        <DotBgWrapper ref={dotElemRef} />
+      </DotBgMainWrapper>
+    </>
   );
 };
 

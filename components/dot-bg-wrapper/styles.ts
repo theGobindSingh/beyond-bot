@@ -1,9 +1,13 @@
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
-export const wrapperStyles = css`
-  position: relative;
+export const DotBgMainWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
   overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  z-index: 0;
 `;
 
 export const DotBgWrapper = styled.div`
@@ -29,9 +33,4 @@ export const DotBgWrapper = styled.div`
     );
   background-size: var(--_bs) var(--_bs);
   transition: all 0s ease;
-`;
-
-export const childrenWrapperStyles = css`
-  position: relative;
-  z-index: 1;
 `;

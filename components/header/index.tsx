@@ -28,6 +28,7 @@ const Header = () => {
       wrapperCss={headerWrapperStyles}
       css={headerContainerStyles}
       element="header"
+      notFps
     >
       <Image src={logo.black} alt={name} css={headerImageStyles} height={42} />
       <HeaderNavWrapper>{headerLinks.map(linksMapper)}</HeaderNavWrapper>

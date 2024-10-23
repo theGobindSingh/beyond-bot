@@ -1,35 +1,36 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import {
-  commonLinkStyles,
-  commonWrapperStyles,
-  mediaQuery,
-} from '@styles/global';
+import { commonLinkStyles, fullWidthPadding, mediaQuery } from '@styles/global';
 
-export const homeDotBgWrapperStyles = css`
-  background: var(--color-neutral-200);
-`;
+export const homeHeroContainerStyles = css`
+  --_i-s: min(37.5vw, 700px);
 
-export const homeWrapperStyles = css`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-`;
+  justify-content: space-between;
 
-export const HomeHeroWrapper = styled.section`
-  ${commonWrapperStyles}
-  align-items: flex-start;
   .home-title {
     max-width: 37.5rem;
     width: 100%;
+    font-size: calc(var(--fs-4xl) + var(--fs-4xs));
+    letter-spacing: -0.125rem;
+  }
+
+  .img {
+    grid-row: 1 / -1;
+    grid-column: 2 / 3;
+    height: auto;
+    width: var(--_i-s);
+    margin: auto 0;
   }
 `;
+
+export const HomeHeroContent = styled.div``;
 
 export const HomeGradient = styled.div`
   position: absolute;
   left: -10rem;
-  bottom: -2.5rem;
+  bottom: -10rem;
   width: 250px;
   aspect-ratio: 1;
   transition: all 0.3s;
@@ -43,10 +44,16 @@ export const HomeGradient = styled.div`
   opacity: 0.75;
   z-index: -1;
   &.active {
-    left: -2rem;
-    bottom: -3.5rem;
+    left: 0;
+    bottom: calc(-1 * 250px / 2 + 50%);
     scale: 0;
   }
+`;
+
+export const HomeHeroLinkContainer = styled.div`
+  position: relative;
+  height: fit-content;
+  width: fit-content;
 `;
 
 export const homeHeroLinkStyles = css`
@@ -64,7 +71,6 @@ export const homeHeroLinkStyles = css`
   &:hover {
     background-color: var(--color-white);
     color: var(--color-gray-800);
-    border: 1px solid var(--color-gray-800);
     box-shadow: 0 0 32px -4px var(--color-secondary-300);
   }
   ${mediaQuery.phone} {
@@ -76,6 +82,20 @@ export const LinkContainer = styled.div`
   height: fit-content;
   width: fit-content;
   border: 1px solid black;
+`;
+
+export const homeServicesContainerStyles = css`
+  width: 100%;
+  & > * {
+    ${fullWidthPadding}
+    padding-right: 0;
+  }
+  @media (max-width: 640px) {
+    width: 100%;
+    & > * {
+      padding-right: 0;
+    }
+  }
 `;
 
 export const HomeServicesCardsWrapper = styled.div`
@@ -117,6 +137,7 @@ export const HomeServiceCard = styled.div`
 `;
 
 export const homeServiceContainerStyles = css`
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
