@@ -51,14 +51,14 @@ export const homeServices = {
   services: [
     {
       title: 'E-Commerce',
-      imgUrl: '/assets/images/e-com.png',
+      imgUrl: '/assets/images/teach.png',
       text: `Our solution empowers customers to directly interact with products, enabling them to ask abstract 
       questions and receive insightful responses. It enhances website search capabilities, offering a seamless 
       and intuitive experience. It also enables image-based recommendations and support for outfit building.`,
     },
     {
       title: 'Public Sector',
-      imgUrl: '/assets/images/public.png',
+      imgUrl: '/assets/images/data.png',
       text: `Our solution offers comprehensive search and answers related to public policy and schemes. Our 
       intelligent agent can assist users by taking actions and helping them fill out forms. Additionally, we 
       provide multi-language support to ensure wider accessibility and inclusively, making our service more 
@@ -66,7 +66,7 @@ export const homeServices = {
     },
     {
       title: 'Healthcare Sector',
-      imgUrl: '/assets/images/health.png',
+      imgUrl: '/assets/images/lab.png',
       text: `Our solution assists patients in finding the right doctors and booking appointments with ease. 
       It provides comprehensive information on medications, treatments, and healthcare facilities. Additionally, 
       it enables symptom checking and health risk assessments to ensure timely care. We also support tele-medicine 

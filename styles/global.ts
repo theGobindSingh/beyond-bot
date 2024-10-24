@@ -25,6 +25,7 @@ export const globalStyles = css`
   :root {
     --header-height: 70px;
     --color-bg-primary-hsl: 240, 60%, 80%;
+    --color-extra-one: #2e989e;
   }
   body {
     color: var(--color-gray-800);

@@ -1,6 +1,7 @@
+import { containerSize } from '@components/common-full-width-wrapper/styles';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { commonLinkStyles, fullWidthPadding, mediaQuery } from '@styles/global';
+import { commonLinkStyles, mediaQuery } from '@styles/global';
 
 export const homeHeroContainerStyles = css`
   --_i-s: min(37.5vw, 700px);
@@ -84,11 +85,20 @@ export const LinkContainer = styled.div`
   border: 1px solid black;
 `;
 
+export const homeServicesWrapperStyles = css``;
+
 export const homeServicesContainerStyles = css`
   width: 100%;
-  & > * {
-    ${fullWidthPadding}
-    padding-right: 0;
+  max-width: 100%;
+  /* height: calc(100dvh - var(--header-height)); */
+  height: fit-content;
+  padding-top: var(--header-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .services-heading {
+    text-align: center;
+    margin: 0em 0 0.5em 0;
   }
   @media (max-width: 640px) {
     width: 100%;
@@ -99,28 +109,42 @@ export const homeServicesContainerStyles = css`
 `;
 
 export const HomeServicesCardsWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  justify-content: center;
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: auto;
+  gap: 1.5rem;
   align-items: center;
-  @media (max-width: 1400px) {
-    grid-template-columns: repeat(2, 1fr);
+  justify-content: flex-start;
+  scroll-snap-type: x proximity;
+  /* height: 80%; */
+  width: 100%;
+  scroll-behavior: smooth;
+  padding-left: min(7.5vw, 135px);
+  padding-right: 0;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  img {
+    object-fit: contain;
+    margin-left: auto;
   }
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr;
+  h3 {
+    color: var(--color-extra-one);
   }
 `;
 
 export const HomeServiceCard = styled.div`
   display: flex;
+  aspect-ratio: 5 / 6;
+  /* width: calc(40vw - 1.5rem * 2 - (100% - ${containerSize}) / 2); */
+  height: 650px;
+  flex-shrink: 0;
+  scroll-snap-align: center;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   padding: 1.5rem 2rem;
   transition: all 0.3s ease;
   border: 1px solid var(--color-gray-100);
-  height: 100%;
   gap: 1rem;
   box-shadow: 0 0 1.25rem var(--color-gray-200);
   cursor: default;
@@ -130,19 +154,6 @@ export const HomeServiceCard = styled.div`
   &:hover {
     transform: scale(1.01);
     box-shadow: 0 0 1.25rem var(--color-gray-300);
-  }
-  .text {
-    max-width: 80%;
-  }
-`;
-
-export const homeServiceContainerStyles = css`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  @media (max-width: 900px) {
-    flex-direction: column;
   }
 `;
 
