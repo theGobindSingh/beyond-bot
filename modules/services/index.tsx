@@ -73,7 +73,7 @@ const ServicesModule = () => {
       const bulletKey = `services-card-${index}-bullet-${bulletIndex}`;
       return (
         <ServiceCardBullet key={bulletKey}>
-          <Image src={bulletImg} alt={bulletTitle} width={20} height={20} />
+          <Image src={bulletImg} alt="" width={20} height={20} />
           <Span $size="2xs">{bulletTitle}</Span>
         </ServiceCardBullet>
       );
