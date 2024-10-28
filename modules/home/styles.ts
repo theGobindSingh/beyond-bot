@@ -36,11 +36,7 @@ export const HomeGradient = styled.div`
   aspect-ratio: 1;
   transition: all 0.3s ease;
   filter: blur(50px);
-  background: radial-gradient(
-    var(--color-primary-500),
-    var(--color-secondary-300),
-    transparent
-  );
+  background: radial-gradient(#ff29c3, #174aff, transparent, transparent);
   border-radius: 50%;
   opacity: 0.75;
   z-index: -1;

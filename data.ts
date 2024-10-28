@@ -1,6 +1,15 @@
+import cartIcon from '@images/cart.png';
+import dataImg from '@images/data.png';
+import galleryIcon from '@images/gallery.png';
+import labImg from '@images/lab.png';
+import loadingIcon from '@images/loading.png';
 import coloredLogo from '@images/logo-colored.png';
 import backLogo from '@images/logo.png';
+import searchIcon from '@images/search.png';
+import teachImg from '@images/teach.png';
+import userIcon from '@images/user.png';
 import homeVisionImg from '@images/vision.png';
+import { StaticImageData } from 'next/image';
 
 export const name = 'Beyond Bot';
 
@@ -53,34 +62,109 @@ export const homeHero = {
   },
 };
 
+const services: {
+  img: string | StaticImageData;
+  title: string;
+  subTitle: string;
+  description: string;
+  bullets: {
+    title: string;
+    img: string | StaticImageData;
+  }[];
+}[] = [
+  {
+    title: 'E-Commerce',
+    subTitle:
+      'Our e-commerce agent is designed to elevate the shopping experience and improve customer satisfaction.',
+    description: `Our solution empowers customers to directly interact with products, enabling them to ask abstract 
+      questions and receive insightful responses. It enhances website search capabilities, offering a seamless 
+      and intuitive experience. It also enables image-based recommendations and support for outfit building.`,
+    img: teachImg,
+    bullets: [
+      {
+        title: 'Outfit Matching and Recommendations',
+        img: cartIcon,
+      },
+      {
+        title: 'Context-aware Searches',
+        img: searchIcon,
+      },
+      {
+        title: 'Natural Language Queries',
+        img: userIcon,
+      },
+      {
+        title: 'Multilingual Support',
+        img: loadingIcon,
+      },
+      {
+        title: 'Image Reverse Search',
+        img: galleryIcon,
+      },
+    ],
+  },
+  {
+    title: 'Public Sector',
+    subTitle:
+      'Our public sector agent is designed to improve accessibility and streamline public services.',
+    description: `Our solution offers comprehensive search and answers related to public policy and schemes. Our 
+    intelligent agent can assist users by taking actions and helping them fill out forms. Additionally, we provide 
+    multi-language support to ensure wider accessibility and inclusivity, making our service more versatile and 
+    user-friendly.`,
+    img: dataImg,
+    bullets: [
+      {
+        title: 'Outfit Matching and Recommendations',
+        img: cartIcon,
+      },
+      {
+        title: 'Context-aware Searches',
+        img: searchIcon,
+      },
+      {
+        title: 'Natural Language Queries',
+        img: userIcon,
+      },
+      {
+        title: 'Multilingual Support',
+        img: loadingIcon,
+      },
+    ],
+  },
+  {
+    title: 'Healthcare Sector',
+    subTitle: `Our healthcare agent are tailored to support both medical professionals and patients, enhancing care 
+    and efficiency`,
+    description: `Our solution assists patients in finding the right doctors and booking appointments with ease. It 
+    provides comprehensive information on medications, treatments, and healthcare facilities. Additionally, it enables 
+    symptom checking and health risk assessments to ensure timely care. We also support telemedicine consultations and 
+    follow-up scheduling, making healthcare more accessible and convenient.`,
+    img: labImg,
+    bullets: [
+      {
+        title: 'Outfit Matching and Recommendations',
+        img: cartIcon,
+      },
+      {
+        title: 'Context-aware Searches',
+        img: searchIcon,
+      },
+      {
+        title: 'Natural Language Queries',
+        img: userIcon,
+      },
+      {
+        title: 'Multilingual Support',
+        img: loadingIcon,
+      },
+    ],
+  },
+];
+
 export const homeServices = {
   title: 'Our Services',
   changedFont: [1, 7],
-  services: [
-    {
-      title: 'E-Commerce',
-      imgUrl: '/assets/images/teach.png',
-      text: `Our solution empowers customers to directly interact with products, enabling them to ask abstract 
-      questions and receive insightful responses. It enhances website search capabilities, offering a seamless 
-      and intuitive experience. It also enables image-based recommendations and support for outfit building.`,
-    },
-    {
-      title: 'Public Sector',
-      imgUrl: '/assets/images/data.png',
-      text: `Our solution offers comprehensive search and answers related to public policy and schemes. Our 
-      intelligent agent can assist users by taking actions and helping them fill out forms. Additionally, we 
-      provide multi-language support to ensure wider accessibility and inclusively, making our service more 
-      versatile and user-friendly.`,
-    },
-    {
-      title: 'Healthcare Sector',
-      imgUrl: '/assets/images/lab.png',
-      text: `Our solution assists patients in finding the right doctors and booking appointments with ease. 
-      It provides comprehensive information on medications, treatments, and healthcare facilities. Additionally, 
-      it enables symptom checking and health risk assessments to ensure timely care. We also support tele-medicine 
-      consultations and follow-up scheduling, making healthcare more accessible and convenient.`,
-    },
-  ],
+  services,
 };
 
 export const homeVision = {
@@ -108,4 +192,10 @@ export const contactSection = {
     url: '/contact',
     text: 'Contact us',
   },
+};
+
+export const servicesPageData = {
+  title: 'Transforming Industries with Advanced AI Agents',
+  changedFont: [5, 16, 26, 33, 43],
+  services,
 };
