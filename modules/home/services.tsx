@@ -11,7 +11,11 @@ import {
 import Image from 'next/image';
 import { MouseEventHandler } from 'react';
 
-const mapper = ({ title, text, imgUrl }: (typeof homeServices.services)[0]) => {
+const mapper = ({
+  title,
+  description,
+  img,
+}: (typeof homeServices.services)[0]) => {
   const clickHandler: MouseEventHandler<HTMLDivElement> = ({
     currentTarget,
   }) => {
@@ -23,12 +27,12 @@ const mapper = ({ title, text, imgUrl }: (typeof homeServices.services)[0]) => {
   };
   return (
     <HomeServiceCard key={`home-service-${title}`} onClick={clickHandler}>
-      <Image src={imgUrl} alt={title} width={275} height={275} />
+      <Image src={img} alt={title} width={275} height={275} />
       <H3 $margin="0" $weight="600" $size="m">
         {title}
       </H3>
       <P $margin="0" $lineHeight="2rem" className="text">
-        {text}
+        {description}
       </P>
     </HomeServiceCard>
   );
