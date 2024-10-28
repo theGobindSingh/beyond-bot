@@ -23,7 +23,7 @@ const mapper = ({ title, text, imgUrl }: (typeof homeServices.services)[0]) => {
   };
   return (
     <HomeServiceCard key={`home-service-${title}`} onClick={clickHandler}>
-      <Image src={imgUrl} alt={title} width={250} height={250} />
+      <Image src={imgUrl} alt={title} width={275} height={275} />
       <H3 $margin="0" $weight="600" $size="m">
         {title}
       </H3>
@@ -45,7 +45,7 @@ const HomeServices = () => (
       cursiveTextIndex={homeServices.changedFont}
       className="services-heading"
     />
-    <HomeServicesCardsWrapper>
+    <HomeServicesCardsWrapper className="transparent-scroll-track">
       {homeServices.services.map(mapper)}
     </HomeServicesCardsWrapper>
   </CommonFullWidthWrapper>

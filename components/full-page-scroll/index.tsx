@@ -34,7 +34,11 @@ const FullPageScroll = ({ children }: PropsWithChildren<unknown>) => {
       snap.destroy();
     };
   }, [children]);
-  return <FpsWrapper ref={ref}>{children}</FpsWrapper>;
+  return (
+    <FpsWrapper className="full-page-scroll-wrapper" ref={ref}>
+      {children}
+    </FpsWrapper>
+  );
 };
 
 export default FullPageScroll;

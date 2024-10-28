@@ -70,7 +70,7 @@ export const contactSectionLinkStyles = css`
   &:hover {
     background-color: var(--color-white);
     color: var(--color-gray-800);
-    border: 1px solid var(--color-gray-800);
+    /* border: 1px solid var(--color-gray-800); */
     box-shadow: 0 0 8px 0px var(--color-gray-600);
   }
   ${mediaQuery.phone} {

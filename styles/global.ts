@@ -26,6 +26,7 @@ export const globalStyles = css`
     --header-height: 70px;
     --color-bg-primary-hsl: 240, 60%, 80%;
     --color-extra-one: #2e989e;
+    --scrollbar-width: 7px;
   }
   body {
     color: var(--color-gray-800);
@@ -42,31 +43,57 @@ export const globalStyles = css`
   }
   * {
     box-sizing: border-box;
+    &::-webkit-scrollbar {
+      width: var(--scrollbar-width);
+      height: var(--scrollbar-width);
+      background-color: #efefef;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #c3c3c3;
+      border-radius: 100vw;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
   }
+  .transparent-scroll-track {
+    &::-webkit-scrollbar {
+      background-color: transparent;
+    }
+  }
+
   .link-animation {
     position: relative;
-    &:hover {
+    &:hover,
+    &.active-animation {
       &::before {
-        transform: scaleX(1);
+        left: 15%;
+        width: 70%;
       }
     }
     &::before {
       content: '';
       position: absolute;
-      width: 100%;
-      height: 0.125em;
+      width: 0%;
+      height: 0.1125em;
       color: inherit;
       background-color: currentColor;
-      bottom: 0;
-      left: 0;
-      transform: scaleX(0);
+      bottom: -0.2em;
+      left: 50%;
       transform-origin: left;
       transition: all 0.3s ease;
-      opacity: 0.75;
+      opacity: 0.5;
+      border-radius: 100vw;
     }
   }
   .cursive {
     font-family: var(--font-cursive);
+    letter-spacing: 0.01em;
+  }
+  ${mediaQuery.phone} {
+    :root {
+      --scrollbar-width: 4px;
+    }
   }
 `;
 
@@ -77,6 +104,7 @@ export const commonLinkStyles = css`
   font-size: var(--fs-2xs);
   font-weight: 500;
   transition: all 0.3s ease;
+  cursor: pointer;
   ${mediaQuery.phone} {
     font-size: var(--fs-3xs);
   }

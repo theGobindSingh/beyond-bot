@@ -1,5 +1,6 @@
 import coloredLogo from '@images/logo-colored.png';
 import backLogo from '@images/logo.png';
+import homeVisionImg from '@images/vision.png';
 
 export const name = 'Beyond Bot';
 
@@ -17,14 +18,19 @@ export const logo = {
   colored: coloredLogo,
 };
 
-export const headerLinks = [
+export const headerLinks: {
+  title: string;
+  url: string;
+  isButton?: boolean;
+  tryToFindClass?: string;
+}[] = [
   {
     title: 'Home',
     url: '/',
   },
   {
-    title: 'Service',
-    url: '/service',
+    title: 'Services',
+    url: '/services',
   },
   {
     title: 'Partner',
@@ -33,6 +39,8 @@ export const headerLinks = [
   {
     title: 'Contact',
     url: '/contact',
+    isButton: true,
+    tryToFindClass: 'contact-section',
   },
 ];
 
@@ -40,7 +48,7 @@ export const homeHero = {
   text: 'Revolutionize your website with Our AI Agents',
   changedFont: [2, 22, 29, 41],
   link: {
-    url: '/service',
+    url: '/services',
     text: 'Try the demo now',
   },
 };
@@ -90,8 +98,7 @@ export const homeVision = {
   technology, we help businesses across various sectors maximize their engagement and efficiency, providing tailored 
   solutions that enhance user satisfaction and drive growth. Join us in transforming digital experiences and unlocking 
   the full potential of AI for your business.`,
-  imgUrl:
-    'https://img.freepik.com/free-photo/two-crop-hands-handshake_23-2147711143.jpg',
+  imgUrl: homeVisionImg,
 };
 
 export const contactSection = {

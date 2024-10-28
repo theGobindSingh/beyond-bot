@@ -40,6 +40,7 @@ const ContactSection = () => {
       css={contactSectionMainContainerStyles}
       wrapperCss={contactSectionWrapperStyles}
       secondContainer={<Footer />}
+      className="contact-section"
     >
       <ContactSectionContainer ref={containerRef}>
         <H2 className="contact-title" $margin="0">

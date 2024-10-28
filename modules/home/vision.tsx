@@ -3,35 +3,17 @@ import Heading from '@components/heading';
 import { P } from '@components/html';
 import { homeVision, name } from '@data';
 import {
-  homeServiceContainerStyles,
   HomeServiceContent,
   homeServiceImgStyles,
   homeServiceLinkStyles,
+  homeVisionContainerStyles,
 } from '@modules/home/styles';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
 const HomeVision = () => {
   const imgRef = useRef<HTMLImageElement>(null);
-  useEffect(() => {
-    const imgElem = imgRef.current;
-    const callback: IntersectionObserverCallback = (entries) => {
-      if (!imgElem) return;
-      const { isIntersecting } = entries?.[0] ?? ({} as never);
-      if (isIntersecting) {
-        imgElem.classList.add('active');
-      } else {
-        imgElem.classList.remove('active');
-      }
-    };
-    const observer = new IntersectionObserver(callback, {
-      rootMargin: '-30% 0%',
-      threshold: 0.5,
-    });
-    observer.observe(imgElem!);
-    return () => observer.disconnect();
-  }, []);
   const onLinkMouseEnter = () => {
     const imgElem = imgRef.current;
     if (!imgElem) return;
@@ -44,8 +26,8 @@ const HomeVision = () => {
   };
   return (
     <CommonFullWidthWrapper
-      bg="var(--color-gray-300)"
-      css={homeServiceContainerStyles}
+      bg="var(--color-gray-100)"
+      css={homeVisionContainerStyles}
     >
       <HomeServiceContent>
         <Heading

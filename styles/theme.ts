@@ -4,12 +4,7 @@ import { defaultLightTheme } from '@kami-ui/theme-shop';
 // eslint-disable-next-line import/no-extraneous-dependencies, node/no-extraneous-import
 import { ThemeObject } from '@kami-ui/types';
 import { breakpoints } from '@styles/global';
-import {
-  DM_Mono,
-  Inter,
-  Nothing_You_Could_Do,
-  Poppins,
-} from 'next/font/google';
+import { DM_Mono, Inter, Nothing_You_Could_Do } from 'next/font/google';
 
 const fontSansSerif = Inter({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -21,7 +16,7 @@ const fontMono = DM_Mono({
   subsets: ['latin', 'latin-ext'],
 });
 
-const fontSans = Poppins({
+const fontSans = Inter({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
   subsets: ['latin', 'latin-ext'],
 });

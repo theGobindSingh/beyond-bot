@@ -52,16 +52,18 @@ const getColor = ({
 export const H1 = styled.h1<CommonTextProps>`
   font-size: ${({ $size }) => fontSizes[$size || '4xl']};
   margin: ${({ $margin }) => $margin || '0 0 0.75em 0'};
-  font-weight: ${({ $weight }) => $weight || '600'};
+  font-weight: ${({ $weight }) => $weight || '700'};
   line-height: ${({ $lineHeight }) => $lineHeight || 'normal'};
+  letter-spacing: -0.05em;
   color: ${getColor};
 `;
 
 export const H2 = styled.h2<CommonTextProps>`
   font-size: ${({ $size }) => fontSizes[$size || '2xl']};
   margin: ${({ $margin }) => $margin || '0 0 0.5em 0'};
-  font-weight: ${({ $weight }) => $weight || '600'};
+  font-weight: ${({ $weight }) => $weight || '700'};
   line-height: ${({ $lineHeight }) => $lineHeight || 'normal'};
+  letter-spacing: -0.05em;
   color: ${getColor};
 `;
 

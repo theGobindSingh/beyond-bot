@@ -14,7 +14,7 @@ export const homeHeroContainerStyles = css`
     max-width: 37.5rem;
     width: 100%;
     font-size: calc(var(--fs-4xl) + var(--fs-4xs));
-    letter-spacing: -0.125rem;
+    /* letter-spacing: -0.125rem; */
   }
 
   .img {
@@ -30,11 +30,11 @@ export const HomeHeroContent = styled.div``;
 
 export const HomeGradient = styled.div`
   position: absolute;
-  left: -10rem;
-  bottom: -10rem;
+  left: min(-15rem, -15vw);
+  bottom: -15rem;
   width: 250px;
   aspect-ratio: 1;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
   filter: blur(50px);
   background: radial-gradient(
     var(--color-primary-500),
@@ -119,10 +119,7 @@ export const HomeServicesCardsWrapper = styled.div`
   /* height: 80%; */
   width: 100%;
   scroll-behavior: smooth;
-  padding-left: min(7.5vw, 135px);
-  padding-right: 0;
-  padding-bottom: 1rem;
-  padding-top: 1rem;
+  padding: 1rem min(7.5vw, 135px);
   img {
     object-fit: contain;
     margin-left: auto;
@@ -163,7 +160,7 @@ export const HomeServiceContent = styled.div`
   flex-direction: column;
   justify-content: center;
   .vision-text {
-    line-height: 2rem;
+    line-height: 2.25rem;
   }
   @media (max-width: 900px) {
     width: 100%;
@@ -187,16 +184,20 @@ export const homeServiceImgStyles = css`
   object-fit: cover;
   filter: saturate(0%);
   transition: all 0.3s ease-in-out;
-  &.active {
+  &:hover,
+  &.forced-active {
     filter: saturate(100%);
   }
-  @media (min-width: 900px) {
-    &:hover,
-    &.forced-active {
-      filter: saturate(0%);
-    }
+  @media (max-width: 900px) {
+    filter: saturate(100%);
   }
   @media (max-width: 900px) {
     width: 100%;
   }
+`;
+
+export const homeVisionContainerStyles = css`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
