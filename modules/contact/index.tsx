@@ -32,7 +32,7 @@ const Contact = () => {
       <ContactLowerWrapper>
         <ContactLowerContainer>
           <MyCustomGForm />
-          <Image className="img" src={img} alt="" />
+          <Image className="img" src={img} alt="" priority />
         </ContactLowerContainer>
       </ContactLowerWrapper>
     </DotBgSection>
