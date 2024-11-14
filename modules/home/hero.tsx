@@ -1,3 +1,4 @@
+import { Link } from '@components/common-button';
 import DotBgSection from '@components/dot-bg-section';
 import Heading from '@components/heading';
 import { homeHero } from '@data';
@@ -7,10 +8,8 @@ import {
   homeHeroContainerStyles,
   HomeHeroContent,
   HomeHeroLinkContainer,
-  homeHeroLinkStyles,
 } from '@modules/home/styles';
 import Image from 'next/image';
-import Link from 'next/link';
 import { MouseEventHandler, useRef } from 'react';
 
 const HomeHero = () => {
@@ -43,7 +42,6 @@ const HomeHero = () => {
         <HomeHeroLinkContainer>
           <Link
             href={homeHero.link.url}
-            css={homeHeroLinkStyles}
             ref={linkElemRef}
             onMouseEnter={onLinkMouseEnter}
             onMouseLeave={onLinkMouseLeave}

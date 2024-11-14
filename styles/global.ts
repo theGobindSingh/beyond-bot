@@ -105,6 +105,9 @@ export const commonLinkStyles = css`
   font-weight: 500;
   transition: all 0.3s ease;
   cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 0;
   ${mediaQuery.phone} {
     font-size: var(--fs-3xs);
   }

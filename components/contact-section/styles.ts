@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { commonLinkStyles, mediaQuery } from '@styles/global';
+import { mediaQuery } from '@styles/global';
 
 export const contactSectionWrapperStyles = css`
   background: var(--color-white);
@@ -51,30 +51,6 @@ export const ContactSectionContainer = styled.div`
   }
   ${mediaQuery.phone} {
     padding: 3rem 2rem;
-  }
-`;
-
-export const contactSectionLinkStyles = css`
-  ${commonLinkStyles}
-  width: fit-content;
-  display: block;
-  text-transform: uppercase;
-  background-color: var(--color-gray-800);
-  padding: 0.5em 1.25em;
-  border-radius: 100vw;
-  color: var(--color-white);
-  font-weight: 400;
-  position: relative;
-  border: 1px solid transparent;
-  margin: 0.5rem 0;
-  &:hover {
-    background-color: var(--color-white);
-    color: var(--color-gray-800);
-    /* border: 1px solid var(--color-gray-800); */
-    box-shadow: 0 0 8px 0px var(--color-gray-600);
-  }
-  ${mediaQuery.phone} {
-    font-size: var(--fs-2xs);
   }
 `;
 

@@ -1,6 +1,6 @@
+import { Link } from '@components/common-button';
 import {
   ContactSectionContainer,
-  contactSectionLinkStyles,
   contactSectionMainContainerStyles,
   contactSectionWrapperStyles,
   imgStyles,
@@ -11,7 +11,6 @@ import { H2, P } from '@components/html';
 import { contactSection } from '@data';
 import xMesh from '@images/xmesh.png';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useRef } from 'react';
 
 const ContactSection = () => {
@@ -50,7 +49,6 @@ const ContactSection = () => {
         <Link
           className="contact-link"
           href={contactSection.link.url}
-          css={contactSectionLinkStyles}
           onMouseEnter={onLinkMouseEnter}
           onMouseLeave={onLinkMouseLeave}
         >

@@ -1,3 +1,4 @@
+import contactImg from '@images/calendar.png';
 import cartIcon from '@images/cart.png';
 import dataImg from '@images/data.png';
 import galleryIcon from '@images/gallery.png';
@@ -67,6 +68,10 @@ const services: {
   title: string;
   subTitle: string;
   description: string;
+  link?: {
+    url: string;
+    text: string;
+  };
   bullets: {
     title: string;
     img: string | StaticImageData;
@@ -74,6 +79,10 @@ const services: {
 }[] = [
   {
     title: 'E-Commerce',
+    link: {
+      url: '/contact',
+      text: 'BOOK A DEMO',
+    },
     subTitle:
       'Our e-commerce agent is designed to elevate the shopping experience and improve customer satisfaction.',
     description: `Our solution empowers customers to directly interact with products, enabling them to ask abstract 
@@ -112,6 +121,10 @@ const services: {
     multi-language support to ensure wider accessibility and inclusivity, making our service more versatile and 
     user-friendly.`,
     img: dataImg,
+    link: {
+      url: '/contact',
+      text: 'BOOK A DEMO',
+    },
     bullets: [
       {
         title: 'Outfit Matching and Recommendations',
@@ -198,4 +211,13 @@ export const servicesPageData = {
   title: 'Transforming Industries with Advanced AI Agents',
   changedFont: [5, 16, 26, 33, 43],
   services,
+};
+
+export const contactPageData = {
+  title: 'Request a Demo',
+  changedFont: [3, 11],
+  subtitle: `Fill out the form below to discover how BEYONDBOT can help you and your teams. We'll be in touch with you 
+  shortly`,
+  img: contactImg,
+  successMsg: 'Form submitted successfully!',
 };

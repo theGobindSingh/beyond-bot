@@ -1,7 +1,6 @@
 import { containerSize } from '@components/common-full-width-wrapper/styles';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { commonLinkStyles, mediaQuery } from '@styles/global';
 
 export const homeHeroContainerStyles = css`
   --_i-s: min(37.5vw, 700px);
@@ -51,28 +50,7 @@ export const HomeHeroLinkContainer = styled.div`
   position: relative;
   height: fit-content;
   width: fit-content;
-`;
-
-export const homeHeroLinkStyles = css`
-  ${commonLinkStyles}
-  width: fit-content;
-  display: block;
-  text-transform: uppercase;
-  background-color: var(--color-gray-800);
-  padding: 0.5em 1.25em;
-  border-radius: 100vw;
-  color: var(--color-white);
-  font-weight: 400;
-  position: relative;
-  border: 1px solid transparent;
-  &:hover {
-    background-color: var(--color-white);
-    color: var(--color-gray-800);
-    box-shadow: 0 0 32px -4px var(--color-secondary-300);
-  }
-  ${mediaQuery.phone} {
-    font-size: var(--fs-2xs);
-  }
+  font-size: var(--fs-s);
 `;
 
 export const LinkContainer = styled.div`
@@ -163,8 +141,8 @@ export const HomeServiceContent = styled.div`
   }
 `;
 
+//here
 export const homeServiceLinkStyles = css`
-  ${homeHeroLinkStyles}
   margin: 2rem 0;
   &:hover {
     box-shadow: 0 0 8px 0px var(--color-gray-600);

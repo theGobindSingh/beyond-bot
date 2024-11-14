@@ -22,8 +22,16 @@
     },
     "noPropertyAccessFromIndexSignature": false,
     "ignoreDeprecations": "5.0",
-    "verbatimModuleSyntax": false
+    "verbatimModuleSyntax": false,
+    "allowUnusedLabels": true,
+    "noFallthroughCasesInSwitch": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "eslint.config.mjs",
+    "next.config.js"
+  ],
   "exclude": ["node_modules"]
 }

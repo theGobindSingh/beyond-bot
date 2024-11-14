@@ -1,3 +1,4 @@
+import { Link } from '@components/common-button';
 import DotBgSection from '@components/dot-bg-section';
 import Heading from '@components/heading';
 import { P, Span } from '@components/html';
@@ -6,7 +7,9 @@ import {
   ServiceCardBullet,
   ServiceCardBulletsWrapper,
   ServiceCardContent,
+  ServiceCardContentUpper,
   serviceCardImgStyles,
+  serviceCardSecondaryBtnStyles,
   ServiceDot,
   ServicesCard,
   ServicesCardsWrapper,
@@ -61,7 +64,7 @@ const ServicesModule = () => {
   };
 
   const cardsMapper = (
-    { bullets, title: cardTitle, subTitle, img }: (typeof services)[0],
+    { bullets, title: cardTitle, subTitle, img, link }: (typeof services)[0],
     index: number,
   ) => {
     const key = `services-card-${index}`;
@@ -82,13 +85,22 @@ const ServicesModule = () => {
     return (
       <ServicesCard key={key} className={index === 0 ? 'active' : ''}>
         <ServiceCardContent>
-          <Heading
-            $size="l"
-            $weight="600"
-            text={cardTitle}
-            element="h2"
-            className="title"
-          />
+          <ServiceCardContentUpper>
+            <Heading
+              $size="l"
+              $weight="600"
+              text={cardTitle}
+              element="h2"
+              className="title"
+              $margin="0"
+            />
+            <Link
+              css={!link && serviceCardSecondaryBtnStyles}
+              href={link?.url ?? '/'}
+            >
+              {link?.text ?? 'COMING SOON'}
+            </Link>
+          </ServiceCardContentUpper>
           <P $margin="0 0 2em 0" $size="s" className="sub-title">
             {subTitle}
           </P>

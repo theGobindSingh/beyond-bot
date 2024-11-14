@@ -103,6 +103,24 @@ export const ServicesCard = styled.div`
   }
 `;
 
+export const ServiceCardContentUpper = styled.div`
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  padding-top: 0.75rem;
+`;
+
+export const serviceCardSecondaryBtnStyles = css`
+  background-color: #4d53a2;
+  font-size: var(--fs-4xs);
+  &:hover,
+  &:active {
+    background-color: #4d53a2;
+    color: var(--color-white);
+  }
+`;
+
 export const ServiceCardContent = styled.div`
   height: 100%;
   width: calc(55% - 1rem);

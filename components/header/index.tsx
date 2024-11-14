@@ -1,3 +1,4 @@
+import { Button } from '@components/common-button';
 import CommonFullWidthWrapper from '@components/common-full-width-wrapper';
 import {
   headerContainerStyles,
@@ -39,26 +40,23 @@ const Header = () => {
         if (elem) {
           elem.scrollIntoView({ behavior: 'smooth' });
         } else {
-          // eslint-disable-next-line no-console
-          push(url).catch(console.error);
+          void push(url);
         }
       } else {
-        // eslint-disable-next-line no-console
-        push(url).catch(console.error);
+        void push(url);
       }
     };
 
     if (isButton) {
       return (
-        <button
+        <Button
           type="button"
           className={getClassName()}
           key={url}
-          css={commonLinkStyles}
           onClick={clickHandler}
         >
           {title}
-        </button>
+        </Button>
       );
     }
 

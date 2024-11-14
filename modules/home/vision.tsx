@@ -1,3 +1,4 @@
+import { Link } from '@components/common-button';
 import CommonFullWidthWrapper from '@components/common-full-width-wrapper';
 import Heading from '@components/heading';
 import { P } from '@components/html';
@@ -9,7 +10,6 @@ import {
   homeVisionContainerStyles,
 } from '@modules/home/styles';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useRef } from 'react';
 
 const HomeVision = () => {
@@ -38,9 +38,9 @@ const HomeVision = () => {
         <P className="vision-text">{homeVision.text}</P>
         <Link
           href={homeVision.link.url}
-          css={homeServiceLinkStyles}
           onMouseEnter={onLinkMouseEnter}
           onMouseLeave={onLinkMouseLeave}
+          css={homeServiceLinkStyles}
         >
           {homeVision.link.text}
         </Link>
