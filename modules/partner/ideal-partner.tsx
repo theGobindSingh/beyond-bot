@@ -23,10 +23,10 @@ const idealPartnerCardMapper = (
     <IdealPartnerCard key={key}>
       <Image src={img} alt="" className="card-img" />
       <div className="card-text-content">
-        <H2 $margin="0" $size="1xl" className="card-heading">
+        <H2 $margin="0" $size="l" className="card-heading">
           {cardTitle}
         </H2>
-        <P $margin="0" $size="1xs" className="card-text" $weight="500">
+        <P $margin="0" $size="2xs" className="card-text" $weight="500">
           {cardDesc}
         </P>
       </div>

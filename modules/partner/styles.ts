@@ -22,11 +22,11 @@ export const WhyPartnerUpper = styled.div`
   position: relative;
 
   .main-heading {
-    font-size: calc(var(--fs-4xl) + var(--fs-m));
+    font-size: calc(var(--fs-4xl) + var(--fs-4xs));
   }
 
   .main-link {
-    font-size: var(--fs-s);
+    font-size: var(--fs-1xs);
   }
 
   &::before {
@@ -53,13 +53,14 @@ export const WhyPartnerLower = styled.div`
   gap: 2rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  width: 100%;
 
-  @media (max-width: 1600px) {
+  @media (max-width: 1700px) {
     & {
       grid-template-columns: repeat(3, 1fr);
     }
   }
-  @media (max-width: 1300px) {
+  @media (max-width: 1400px) {
     & {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -79,22 +80,25 @@ export const WhyPartnerCard = styled.div`
   display: flex;
   flex-direction: column;
   padding: 2rem 1rem;
-  gap: 1rem;
-  height: max(47.5vh, 30rem);
+  gap: 0.5rem;
+  width: 100%;
 
   .card-img {
-    height: 50%;
+    height: 200px;
     width: 100%;
     object-fit: contain;
+    margin-bottom: 0.75rem;
   }
 
   .card-heading {
     color: #3890bf;
     height: 4rem;
+    width: 70%;
   }
 
   .card-text {
     color: var(--color-gray-700);
+    line-height: 1.5;
   }
 `;
 
@@ -115,7 +119,7 @@ export const idealPartnerWrapperStyles = css`
   }
 
   .main-heading {
-    font-size: calc(var(--fs-4xl) + var(--fs-m));
+    font-size: calc(var(--fs-4xl) + var(--fs-4xs));
     position: relative;
     z-index: 1;
   }
@@ -125,20 +129,17 @@ export const IdealPartnerCardsWrapper = styled.div`
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(3, 1fr);
-  padding: 0 5rem;
   height: fit-content;
   position: relative;
   z-index: 1;
 
-  @media (max-width: 1750px) {
+  @media (max-width: 1650px) {
     & {
-      padding: 0 2.5rem;
       grid-template-columns: repeat(2, 1fr);
     }
   }
-  @media (max-width: 1200px) {
+  @media (max-width: 1100px) {
     & {
-      padding: 0 0rem;
       grid-template-columns: repeat(1, 1fr);
     }
   }
@@ -146,7 +147,7 @@ export const IdealPartnerCardsWrapper = styled.div`
 
 export const IdealPartnerCard = styled.div`
   height: max(55vh, 35rem);
-  aspect-ratio: 465 / 535;
+  aspect-ratio: 9 / 11;
   background-color: rgba(255, 255, 255, 0.6);
   border: 4px solid var(--color-gray-200);
   border-radius: 2.125rem;
