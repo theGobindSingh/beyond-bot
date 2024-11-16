@@ -29,6 +29,7 @@ const DotBgSection = ({
   const finalWrapperCss = useMemo(
     () => [
       css`
+        --padding-if-full: 0 calc((100% - min(${containerSize}, 1800px)) / 2);
         ${commonWrapperStyles}
         ${wrapperStyles()}
         overflow: hidden;

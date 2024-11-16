@@ -5,7 +5,7 @@ export const DotBgMainWrapper = styled.div`
   top: 0;
   left: 0;
   overflow: hidden;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   z-index: 0;
 `;

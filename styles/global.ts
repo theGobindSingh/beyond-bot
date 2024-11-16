@@ -118,7 +118,7 @@ export const commonWrapperStyles = css`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: sticky;
+  position: relative;
   gap: 1rem;
   padding: var(--header-height, 3rem) 0;
   width: 100%;

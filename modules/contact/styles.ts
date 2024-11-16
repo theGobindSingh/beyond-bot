@@ -1,4 +1,3 @@
-import { containerSize } from '@components/common-full-width-wrapper/styles';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
@@ -67,7 +66,7 @@ export const ContactLowerWrapper = styled.div`
 `;
 
 export const ContactLowerContainer = styled.div`
-  padding: 0 calc((100% - min(${containerSize}, 1800px)) / 2);
+  padding: var(--padding-if-full);
   height: 100%;
   width: 100%;
   display: flex;

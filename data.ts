@@ -1,12 +1,19 @@
+import businessConsultantImg from '@images/business-consultant.png';
 import contactImg from '@images/calendar.png';
 import cartIcon from '@images/cart.png';
+import clockImg from '@images/clock.png';
+import collaborationImg from '@images/collaboration.png';
 import dataImg from '@images/data.png';
 import galleryIcon from '@images/gallery.png';
+import isolationImg from '@images/isolation.png';
 import labImg from '@images/lab.png';
 import loadingIcon from '@images/loading.png';
 import coloredLogo from '@images/logo-colored.png';
 import backLogo from '@images/logo.png';
+import managerImg from '@images/manager.png';
+import receptionImg from '@images/reception.png';
 import searchIcon from '@images/search.png';
+import solutionProviderImg from '@images/solution-provider.png';
 import teachImg from '@images/teach.png';
 import userIcon from '@images/user.png';
 import homeVisionImg from '@images/vision.png';
@@ -64,7 +71,7 @@ export const homeHero = {
 };
 
 const services: {
-  img: string | StaticImageData;
+  img: StaticImageData;
   title: string;
   subTitle: string;
   description: string;
@@ -74,7 +81,7 @@ const services: {
   };
   bullets: {
     title: string;
-    img: string | StaticImageData;
+    img: StaticImageData;
   }[];
 }[] = [
   {
@@ -220,4 +227,91 @@ export const contactPageData = {
   shortly`,
   img: contactImg,
   successMsg: 'Form submitted successfully!',
+};
+
+export const partnerPageData: {
+  title: string;
+  changedFont: number[];
+  link: {
+    url: string;
+    text: string;
+  };
+  whyPartner: {
+    title: string;
+    description: string;
+    img: StaticImageData;
+  }[];
+  idealPartner: {
+    title: string;
+    changedFont: number[];
+    cards: {
+      title: string;
+      description: string;
+      img: StaticImageData;
+    }[];
+  };
+} = {
+  title: 'Why partner with us',
+  changedFont: [1, 7, 13, 17],
+  link: {
+    url: '/contact',
+    text: 'Become a partner',
+  },
+  whyPartner: [
+    {
+      title: `Access Cutting-Edge AI Technology`,
+      description: `Stay ahead of the curve by gaining early access to our latest AI innovations and exclusive 
+      advanced features. Implement cutting-edge AI solutions before your competitors and lead your industry with 
+      advanced technological capabilities.`,
+      img: isolationImg,
+    },
+    {
+      title: `Shape Product Development`,
+      description: `Your valuable input will directly influence the evolution of our AI solutions. We will develop 
+      customized features tailored to your specific needs, ensuring perfect alignment with your business goals and 
+      providing you with a competitive edge.`,
+      img: managerImg,
+    },
+    {
+      title: `Gain Market Visibility`,
+      description: `Benefit from co-marketing opportunities that highlight our partnership and your leadership in 
+      AI adoption. Enhance your market presence and reputation as an innovator, drawing attention to your 
+      forward-thinking approach.`,
+      img: receptionImg,
+    },
+    {
+      title: `Receive Dedicated Support`,
+      description: `Enjoy priority expert assistance to ensure smooth AI integration and operation. Access exclusive 
+      training and resources designed to maximize the potential of our AI solutions in your business, providing you 
+      with the support you need to succeed.`,
+      img: clockImg,
+    },
+  ],
+  idealPartner: {
+    title: 'Our Ideal Partners',
+    changedFont: [2, 5, 13],
+    cards: [
+      {
+        title: `Innovative Thinkers`,
+        description: `We seek partners who are eager to explore the potential of cutting-edge AI technology. 
+        These partners are willing to adopt and innovate with new solutions to stay ahead in the market, driving 
+        forward-thinking initiatives within their organizations.`,
+        img: solutionProviderImg,
+      },
+      {
+        title: `Customer-Centric`,
+        description: `Our ideal partners prioritize their customers and constantly seek ways to enhance the customer 
+        experience. They leverage innovative solutions and personalized services to meet the evolving needs of their 
+        clients, ensuring satisfaction and loyalty.`,
+        img: businessConsultantImg,
+      },
+      {
+        title: `Collaborators`,
+        description: `We value partners who are willing to collaborate closely with us, providing honest feedback and 
+        insights. This collaboration helps us improve and refine our AI solutions to meet real-world needs, ensuring 
+        our technology remains relevant and effective.`,
+        img: collaborationImg,
+      },
+    ],
+  },
 };
