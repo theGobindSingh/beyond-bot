@@ -3,6 +3,10 @@ import styled from '@emotion/styled';
 
 export const contactMainWrapperStyles = css`
   padding-bottom: 0;
+
+  @media (max-width: 750px) {
+    /* overflow-y: auto !important; */
+  }
 `;
 
 export const contactMainContainerStyles = css`
@@ -21,6 +25,10 @@ export const contactMainContainerStyles = css`
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  @media (max-width: 750px) {
+    height: 100%;
+    justify-content: space-between;
   }
 `;
 
@@ -58,11 +66,30 @@ export const ContactUpperContainer = styled.div`
     transform: translate(95%, 60%);
     opacity: 0.5;
   }
+
+  @media (max-width: 750px) {
+    height: 35%;
+    padding: 5vh 0;
+
+    .heading {
+      font-size: var(--fs-2xl);
+    }
+    .text {
+      width: 90%;
+      font-size: var(--fs-1xs);
+      line-height: 1.5rem;
+    }
+  }
 `;
 
 export const ContactLowerWrapper = styled.div`
-  height: 60%;
+  height: 65%;
   background-color: var(--color-white);
+
+  @media (max-width: 750px) {
+    height: 70%;
+    overflow-y: auto;
+  }
 `;
 
 export const ContactLowerContainer = styled.div`
@@ -80,6 +107,16 @@ export const ContactLowerContainer = styled.div`
     max-height: 80%;
     object-fit: contain;
   }
+
+  @media (max-width: 1200px) {
+    .img {
+      display: none;
+    }
+  }
+
+  @media (max-width: 750px) {
+    padding: 0;
+  }
 `;
 
 export const FormContainer = styled.form`
@@ -89,13 +126,28 @@ export const FormContainer = styled.form`
   gap: 1rem;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(5, 1fr);
+
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
+
+  @media (max-width: 750px) {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    height: 100%;
+    overflow-y: auto;
+    padding: var(--padding-if-full);
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
 `;
 
 export const CommonFormItemContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-
   font-size: var(--fs-2xs);
 
   &.long-item {
