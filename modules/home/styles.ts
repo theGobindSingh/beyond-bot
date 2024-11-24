@@ -23,6 +23,27 @@ export const homeHeroContainerStyles = css`
     width: var(--_i-s);
     margin: auto 0;
   }
+
+  @media (max-width: 1100px) {
+    flex-direction: column-reverse;
+    gap: 3rem;
+    .img {
+      width: 50vw;
+    }
+  }
+
+  @media (max-width: 750px) {
+    .home-title {
+      text-align: center;
+      font-size: var(--fs-3xl);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .img {
+      width: 65vw;
+    }
+  }
 `;
 
 export const HomeHeroContent = styled.div``;
@@ -51,6 +72,12 @@ export const HomeHeroLinkContainer = styled.div`
   height: fit-content;
   width: fit-content;
   font-size: var(--fs-s);
+  display: flex;
+
+  @media (max-width: 750px) {
+    width: 100%;
+    justify-content: center;
+  }
 `;
 
 export const LinkContainer = styled.div`

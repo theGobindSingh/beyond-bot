@@ -41,6 +41,8 @@ const DotBgSection = ({
     ],
     [wrapperCss],
   );
+
+  console.log(finalWrapperCss);
   return (
     <FullWidthWrapper
       secondContainer={
