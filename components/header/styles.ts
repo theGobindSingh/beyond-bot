@@ -161,8 +161,12 @@ export const SideBarUpper = styled.div`
   align-items: center;
   justify-content: space-evenly;
   .side-link-upper {
-    font-size: var(--fs-1xl);
+    font-size: var(--fs-l);
     font-weight: 700;
+  }
+  img {
+    height: auto;
+    width: 2.5rem;
   }
 `;
 
@@ -174,7 +178,7 @@ export const SideBarLower = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  font-size: var(--fs-1xs);
+  font-size: var(--fs-2xs);
   overflow: hidden;
   position: relative;
 

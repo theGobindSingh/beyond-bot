@@ -28,9 +28,9 @@ const Header = () => {
   const headerNavRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLImageElement>(null);
 
-  const hamClickHandler: MouseEventHandler<HTMLButtonElement> = ({
-    currentTarget,
-  }) => {
+  const hamClickHandler: MouseEventHandler<
+    HTMLButtonElement | HTMLAnchorElement
+  > = ({ currentTarget }) => {
     currentTarget?.classList.toggle('active');
     sideBarRef.current?.classList.toggle('active');
     headerNavRef.current?.classList.toggle('hidden');
@@ -45,6 +45,7 @@ const Header = () => {
         key={key}
         className="side-link-upper"
         css={commonLinkStyles}
+        onClick={hamClickHandler}
       >
         {title}
       </A>
@@ -137,7 +138,7 @@ const Header = () => {
         </SideBarUpper>
         <SideBarLower>
           <Heading
-            $size="2xl"
+            $size="1xl"
             text={title}
             cursiveTextIndex={changedFont}
             element="h2"
