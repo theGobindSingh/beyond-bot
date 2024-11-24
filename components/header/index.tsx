@@ -27,11 +27,12 @@ const Header = () => {
   const sideBarRef = useRef<HTMLDivElement>(null);
   const headerNavRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLImageElement>(null);
+  const hamRef = useRef<HTMLButtonElement>(null);
 
   const hamClickHandler: MouseEventHandler<
     HTMLButtonElement | HTMLAnchorElement
-  > = ({ currentTarget }) => {
-    currentTarget?.classList.toggle('active');
+  > = () => {
+    hamRef.current?.classList.toggle('active');
     sideBarRef.current?.classList.toggle('active');
     headerNavRef.current?.classList.toggle('hidden');
     logoRef.current?.classList.toggle('hidden');
@@ -71,32 +72,6 @@ const Header = () => {
       return arr.join(' ');
     };
 
-    // const clickHandler = () => {
-    //   if (tryToFindClass) {
-    //     const elem = document.querySelector(`.${tryToFindClass.trim()}`);
-    //     if (elem) {
-    //       elem.scrollIntoView({ behavior: 'smooth' });
-    //     } else {
-    //       void push(url);
-    //     }
-    //   } else {
-    //     void push(url);
-    //   }
-    // };
-
-    // if (isButton) {
-    //   return (
-    //     <Button
-    //       type="button"
-    //       className={getClassName()}
-    //       key={url}
-    //       onClick={clickHandler}
-    //     >
-    //       {title}
-    //     </Button>
-    //   );
-    // }
-
     return (
       <Link
         href={url}
@@ -126,7 +101,12 @@ const Header = () => {
       <HeaderNavWrapper ref={headerNavRef}>
         {headerLinks.map(linksMapper)}
       </HeaderNavWrapper>
-      <HamWrapper aria-label="menu" type="button" onClick={hamClickHandler}>
+      <HamWrapper
+        aria-label="menu"
+        type="button"
+        onClick={hamClickHandler}
+        ref={hamRef}
+      >
         <HamLine className="line _1" />
         <HamLine className="line _2" />
         <HamLine className="line _3" />
