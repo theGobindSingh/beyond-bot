@@ -25,16 +25,22 @@ export const headerContainerStyles = css`
   }
 `;
 
-export const headerImageStyles = css`
-  object-fit: contain;
-  height: 60%;
-  width: auto;
+export const headerLogoLinkStyles = css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-right: auto;
-  transition: all 0.3s ease;
+  height: 60%;
   ${mediaQuery.phone} {
-    margin-right: auto;
     height: 80%;
   }
+`;
+
+export const headerImageStyles = css`
+  object-fit: contain;
+  width: auto;
+  height: 100%;
+  transition: all 0.3s ease;
   &.hidden {
     opacity: 0;
   }

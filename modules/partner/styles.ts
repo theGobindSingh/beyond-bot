@@ -169,7 +169,7 @@ export const IdealPartnerCardsWrapper = styled.div`
 export const IdealPartnerCard = styled.div`
   height: max(55vh, 35rem);
   aspect-ratio: 9 / 11;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 1);
   border: 4px solid var(--color-gray-200);
   border-radius: 2.125rem;
   overflow: hidden;
@@ -193,6 +193,7 @@ export const IdealPartnerCard = styled.div`
   }
   .card-heading {
     width: 100%;
+    color: #3890bf;
   }
   .card-text {
     line-height: 1.5;

@@ -27,7 +27,8 @@ export const email = 'neo@beyondbot.ai';
 
 export const location = 'Pune, India';
 
-export const copyrightText = `© 2024 Beyond Bot Technology.
+export const copyrightText = `© 2024 Beyondbot Technology 
+Private Limited.
 All rights reserved.`;
 
 export const logo = {

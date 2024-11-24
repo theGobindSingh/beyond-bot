@@ -5,6 +5,7 @@ import {
   HamWrapper,
   headerContainerStyles,
   headerImageStyles,
+  headerLogoLinkStyles,
   HeaderNavWrapper,
   headerWrapperStyles,
   lowerLinkStyles,
@@ -91,13 +92,15 @@ const Header = () => {
       element="header"
       notFps
     >
-      <Image
-        ref={logoRef}
-        src={logo.black}
-        alt={name}
-        css={headerImageStyles}
-        height={42}
-      />
+      <A css={headerLogoLinkStyles} href="/" aria-label="home">
+        <Image
+          ref={logoRef}
+          src={logo.black}
+          alt={name}
+          css={headerImageStyles}
+          height={42}
+        />
+      </A>
       <HeaderNavWrapper ref={headerNavRef}>
         {headerLinks.map(linksMapper)}
       </HeaderNavWrapper>
@@ -125,7 +128,7 @@ const Header = () => {
             $color="white"
             className="lower-heading"
           />
-          <Link href={link.url} css={lowerLinkStyles}>
+          <Link href={link.url} css={lowerLinkStyles} onClick={hamClickHandler}>
             {link.text}
           </Link>
         </SideBarLower>
