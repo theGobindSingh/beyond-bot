@@ -42,10 +42,15 @@ export const WhyPartnerUpper = styled.div`
   }
 
   @media (max-width: 750px) {
+    gap: 1rem;
+
     .main-heading {
-      font-size: var(--fs-3xl);
+      font-size: var(--fs-2xl);
       text-align: center;
       width: 90%;
+    }
+    .main-link {
+      font-size: var(--fs-2xs);
     }
   }
 `;
@@ -134,7 +139,7 @@ export const idealPartnerWrapperStyles = css`
 
   @media (max-width: 750px) {
     .main-heading {
-      font-size: var(--fs-3xl);
+      font-size: var(--fs-2xl);
       text-align: center;
       width: 90%;
     }
