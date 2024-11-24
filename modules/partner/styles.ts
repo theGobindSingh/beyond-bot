@@ -40,6 +40,14 @@ export const WhyPartnerUpper = styled.div`
     transform: translate(95%, 60%);
     opacity: 0.5;
   }
+
+  @media (max-width: 750px) {
+    .main-heading {
+      font-size: var(--fs-3xl);
+      text-align: center;
+      width: 90%;
+    }
+  }
 `;
 
 export const WhyPartnerLower = styled.div`
@@ -123,6 +131,14 @@ export const idealPartnerWrapperStyles = css`
     position: relative;
     z-index: 1;
   }
+
+  @media (max-width: 750px) {
+    .main-heading {
+      font-size: var(--fs-3xl);
+      text-align: center;
+      width: 90%;
+    }
+  }
 `;
 
 export const IdealPartnerCardsWrapper = styled.div`
@@ -165,8 +181,8 @@ export const IdealPartnerCard = styled.div`
     gap: 0.5rem;
   }
   .card-img {
-    height: 225px;
     width: 225px;
+    aspect-ratio: 1;
     object-fit: contain;
     margin-bottom: auto;
   }
@@ -175,6 +191,16 @@ export const IdealPartnerCard = styled.div`
   }
   .card-text {
     line-height: 1.5;
+  }
+
+  @media (max-width: 750px) {
+    width: 100%;
+  }
+
+  @media (max-width: 350px) {
+    .card-img {
+      width: 100%;
+    }
   }
 `;
 
