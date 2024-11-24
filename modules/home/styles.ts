@@ -1,6 +1,7 @@
 import { containerSize } from '@components/common-full-width-wrapper/styles';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { mediaQuery } from '@styles/global';
 
 export const homeHeroContainerStyles = css`
   --_i-s: min(37.5vw, 700px);
@@ -13,15 +14,26 @@ export const homeHeroContainerStyles = css`
     max-width: 37.5rem;
     width: 100%;
     font-size: calc(var(--fs-4xl) + var(--fs-4xs));
-    /* letter-spacing: -0.125rem; */
   }
 
   .img {
-    grid-row: 1 / -1;
-    grid-column: 2 / 3;
     height: auto;
     width: var(--_i-s);
     margin: auto 0;
+  }
+
+  ${mediaQuery.phone} {
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    height: 100%;
+    max-height: 650px;
+    .home-title {
+      font-size: var(--fs-3xl);
+    }
+    .img {
+      margin: 0;
+      width: 80%;
+    }
   }
 `;
 
@@ -44,6 +56,10 @@ export const HomeGradient = styled.div`
     bottom: calc(-1 * 250px / 2 + 50%);
     scale: 0;
   }
+  ${mediaQuery.phone} {
+    left: -12.5rem;
+    bottom: -7.5rem;
+  }
 `;
 
 export const HomeHeroLinkContainer = styled.div`
@@ -51,6 +67,9 @@ export const HomeHeroLinkContainer = styled.div`
   height: fit-content;
   width: fit-content;
   font-size: var(--fs-s);
+  ${mediaQuery.phone} {
+    font-size: var(--fs-1xs);
+  }
 `;
 
 export const LinkContainer = styled.div`
@@ -126,6 +145,19 @@ export const HomeServiceCard = styled.div`
     transform: scale(1.01);
     box-shadow: 0 0 1.25rem var(--color-gray-300);
   }
+  ${mediaQuery.phone} {
+    height: 67.5vh;
+    width: 75vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+    .text {
+      line-height: 1.5rem;
+    }
+    img {
+      height: auto;
+      width: 100%;
+    }
+  }
 `;
 
 export const HomeServiceContent = styled.div`
@@ -138,6 +170,9 @@ export const HomeServiceContent = styled.div`
   }
   @media (max-width: 900px) {
     width: 100%;
+    .vision-text {
+      line-height: 1.5rem;
+    }
   }
 `;
 
@@ -146,6 +181,10 @@ export const homeServiceLinkStyles = css`
   margin: 2rem 0;
   &:hover {
     box-shadow: 0 0 8px 0px var(--color-gray-600);
+  }
+  ${mediaQuery.phone} {
+    margin: 1rem auto;
+    font-size: var(--fs-1xs);
   }
 `;
 
@@ -167,6 +206,9 @@ export const homeServiceImgStyles = css`
   }
   @media (max-width: 900px) {
     width: 100%;
+  }
+  ${mediaQuery.phone} {
+    display: none;
   }
 `;
 
