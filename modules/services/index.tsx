@@ -20,6 +20,7 @@ import {
   servicesMainWrapperStyles,
   ServicesUpperContainer,
 } from '@modules/services/styles';
+import { breakpoints } from '@styles/global';
 import Head from 'next/head';
 import Image from 'next/image';
 import { MouseEventHandler, useCallback, useEffect, useRef } from 'react';
@@ -52,7 +53,9 @@ const ServicesModule = () => {
       const targetIndex = allDots.indexOf(target);
       if (targetIndex === -1) return;
       const targetCard = allCards[targetIndex];
-      targetCard?.scrollIntoView({ behavior: 'smooth' });
+      targetCard?.scrollIntoView({
+        behavior: 'smooth',
+      });
     };
     return (
       <ServiceDot
@@ -159,7 +162,9 @@ const ServicesModule = () => {
       const nextIndex = currentIndex.current + 1;
       const nextCard = allCards[nextIndex];
       if (nextCard) {
-        nextCard.scrollIntoView({ behavior: 'smooth' });
+        nextCard.scrollIntoView({
+          behavior: 'smooth',
+        });
       } else {
         allCards[0]?.scrollIntoView({ behavior: 'smooth' });
       }
@@ -167,6 +172,8 @@ const ServicesModule = () => {
   }, [getElements]);
 
   useEffect(() => {
+    const isPhone = window.innerWidth <= breakpoints.phone.max;
+    if (isPhone) return;
     startInterval();
     return () => {
       clearInterval(interval.current);
@@ -176,6 +183,8 @@ const ServicesModule = () => {
   const scrollHandler = () => {
     clearInterval(interval.current);
     clearTimeout(timeout.current);
+    const isPhone = window.innerWidth <= breakpoints.phone.max;
+    if (isPhone) return;
     timeout.current = setTimeout(startInterval, 5000);
   };
 
@@ -188,6 +197,7 @@ const ServicesModule = () => {
       <DotBgSection
         wrapperCss={servicesMainWrapperStyles}
         css={servicesMainContainerStyles}
+        notFps
       >
         <ServicesUpperContainer>
           <Heading

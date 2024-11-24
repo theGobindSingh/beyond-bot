@@ -1,8 +1,12 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { mediaQuery } from '@styles/global';
 
 export const servicesMainWrapperStyles = css`
   padding-bottom: 0;
+  ${mediaQuery.phone} {
+    height: auto;
+  }
 `;
 
 export const servicesMainContainerStyles = css`
@@ -20,6 +24,9 @@ export const servicesMainContainerStyles = css`
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  ${mediaQuery.phone} {
+    height: auto;
   }
 `;
 
@@ -42,11 +49,22 @@ export const ServicesUpperContainer = styled.div`
     transform: translate(95%, 60%);
     opacity: 0.5;
   }
+  ${mediaQuery.phone} {
+    height: auto;
+    .services-heading {
+      max-width: 90%;
+      font-size: var(--fs-1xl);
+      margin: 3rem 0;
+    }
+  }
 `;
 
 export const ServicesLowerWrapper = styled.div`
   height: 60%;
   background-color: var(--color-white);
+  ${mediaQuery.phone} {
+    height: fit-content;
+  }
 `;
 
 export const ServicesLowerContainer = styled.div`
@@ -63,6 +81,9 @@ export const ServicesDotsContainer = styled.div`
   width: 100%;
   gap: 1.5rem;
   scroll-behavior: smooth;
+  ${mediaQuery.phone} {
+    height: 3rem;
+  }
 `;
 
 export const ServiceDot = styled.div`
@@ -86,6 +107,10 @@ export const ServicesCardsWrapper = styled.div`
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
   padding-bottom: 0.5rem;
+  ${mediaQuery.phone} {
+    height: auto;
+    align-items: flex-start;
+  }
 `;
 
 export const ServicesCard = styled.div`
@@ -100,6 +125,15 @@ export const ServicesCard = styled.div`
   &:nth-of-type(even) {
     flex-direction: row-reverse;
   }
+  ${mediaQuery.phone} {
+    flex-direction: column-reverse;
+    height: fit-content;
+    padding: 0;
+    &:nth-of-type(even) {
+      flex-direction: column-reverse;
+      padding: 0;
+    }
+  }
 `;
 
 export const ServiceCardContentUpper = styled.div`
@@ -108,15 +142,19 @@ export const ServiceCardContentUpper = styled.div`
   align-items: center;
   margin-bottom: 0.75rem;
   padding-top: 0.75rem;
+  font-size: inherit;
 `;
 
 export const serviceCardSecondaryBtnStyles = css`
   background-color: #4d53a2;
   font-size: var(--fs-4xs);
+  flex-shrink: 0;
   &:hover,
   &:active {
     background-color: #4d53a2;
     color: var(--color-white);
+  }
+  ${mediaQuery.phone} {
   }
 `;
 
@@ -129,6 +167,18 @@ export const ServiceCardContent = styled.div`
     font-weight: 600;
     line-height: 2rem;
   }
+  ${mediaQuery.phone} {
+    width: 100%;
+    font-size: var(--fs-3xs);
+    .title {
+      font-size: var(--fs-m);
+    }
+    .sub-title {
+      max-width: 100%;
+      line-height: 1.5rem;
+      font-size: var(--fs-1xs);
+    }
+  }
 `;
 
 export const serviceCardImgStyles = css`
@@ -137,6 +187,11 @@ export const serviceCardImgStyles = css`
   height: auto;
   aspect-ratio: 1;
   object-fit: contain;
+  ${mediaQuery.phone} {
+    width: auto;
+    height: 35vh;
+    max-width: 70%;
+  }
 `;
 
 export const ServiceCardBulletsWrapper = styled.ul`
@@ -145,6 +200,11 @@ export const ServiceCardBulletsWrapper = styled.ul`
   margin: 0;
   gap: 1rem;
   grid-template-columns: repeat(2, 1fr);
+  ${mediaQuery.phone} {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 export const ServiceCardBullet = styled.li`
@@ -154,4 +214,12 @@ export const ServiceCardBullet = styled.li`
   margin: 0;
   gap: 1rem;
   background-color: #f3f4f5;
+  ${mediaQuery.phone} {
+    font-size: var(--fs-3xs);
+    width: 100%;
+    padding-right: 0.5rem;
+    * {
+      font-size: inherit;
+    }
+  }
 `;
