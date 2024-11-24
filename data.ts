@@ -57,9 +57,17 @@ export const headerLinks: {
     title: 'Contact',
     url: '/contact',
     isButton: true,
-    tryToFindClass: 'contact-section',
   },
 ];
+
+export const headerContent = {
+  title: 'Lets Transform Industries with Advanced AI Agents',
+  changedFont: [2, 10, 18, 28, 35, 45],
+  link: {
+    url: '/services',
+    text: 'Try the demo now',
+  },
+};
 
 export const homeHero = {
   text: 'Revolutionize your website with Our AI Agents',

@@ -14,7 +14,7 @@ const styles = css`
   padding: 0.5em 1.25em;
   border-radius: 100vw;
   color: var(--color-white);
-  font-weight: 400;
+  font-weight: 00;
   position: relative;
   border: 1px solid transparent;
   &:hover,
