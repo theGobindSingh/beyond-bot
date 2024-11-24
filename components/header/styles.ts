@@ -155,7 +155,7 @@ export const SideBarWrapper = styled.div`
 
 export const SideBarUpper = styled.div`
   width: 100%;
-  height: 60%;
+  height: 57.5%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -171,7 +171,7 @@ export const SideBarUpper = styled.div`
 `;
 
 export const SideBarLower = styled.div`
-  height: 40%;
+  height: 42.5%;
   background-color: var(--color-black);
   padding: 0 5%;
   display: flex;
@@ -183,7 +183,7 @@ export const SideBarLower = styled.div`
   position: relative;
 
   .lower-heading {
-    /* max-width: 80%; */
+    max-width: 21.25rem;
   }
 
   * {
